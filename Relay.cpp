@@ -13,20 +13,21 @@ Relay::Relay(int pin, int offPosition) {
 	this->_onPosition = (offPosition == HIGH) ? LOW : HIGH;
 }
 
-void Relay::init() {
-	pinMode(_pin, OUTPUT);
-	off();
-}
-
 void Relay::debug() {
 	this->_debug = true;
+}
 
-	Serial.print("Initialized Relay on pin: ");
-	Serial.print(_pin);
-	Serial.print(", offPosition: ");
-	Serial.print(_offPosition);
-	Serial.print(", onPosition: ");
-	Serial.println(_onPosition);
+void Relay::init() {
+	pinMode(_pin, OUTPUT);
+	if(_debug){
+		Serial.print("Initialized Relay on pin: ");
+		Serial.print(_pin);
+		Serial.print(", offPosition: ");
+		Serial.print(_offPosition);
+		Serial.print(", onPosition: ");
+		Serial.println(_onPosition);
+	}
+	off();
 }
 
 void Relay::on() {

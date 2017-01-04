@@ -8,8 +8,8 @@ class Relay
 	public:
 		Relay(int pin);
 		Relay(int pin, int offPosition);
-		void init();
 		void debug();
+		void init();
 		void on();
 		void off();
 		void test();
