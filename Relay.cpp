@@ -63,10 +63,10 @@ void Relay::test() {
 	off();
 }
 
-boolean Relay::isOn() {
+bool Relay::isOn() {
 	return _state;
 }
 
-boolean Relay::isOff() {
+bool Relay::isOff() {
 	return !isOn();
 }
