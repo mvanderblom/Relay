@@ -15,8 +15,8 @@ Relay::Relay(int pin, int offPosition) {
 
 void Relay::init() {
 	pinMode(_pin, OUTPUT);
-	off();
-
+	digitalWrite(_pin, _offPosition);
+	_state = false;
 //	Serial.print("Initialized Relay on pin: ");
 //	Serial.print(_pin);
 //	Serial.print(", offPosition: ");
